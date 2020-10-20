@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RestaurantsApplication</string>
+    <string name="restaurants_app">Restaurants App</string>
+    <string name="find_something_to_eat">Find something to eat</string>
+    <string name="the_clink_restaurant">The Clink Restaurant</string>
+    <string name="the_clink_restaurant_description">The Clink Restaurant at HMP opened in February 2014 as the third of the bla bla bla bla bla</string>
+    <string name="restaurants_activity">Restaurants activity</string>
 </resources>

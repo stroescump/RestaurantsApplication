@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingRestaurantTitle">16dp</dimen>
+    <dimen name="paddingRestaurantSubTitle">16dp</dimen>
+    <dimen name="sizeOfRestaurantPhoto">100dp</dimen>
+    <dimen name="paddingRestaurantPhoto">16dp</dimen>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="64dp">
+
+    <ImageView
+        android:id="@+id/imgview_restaurant"
+        android:layout_width="@dimen/sizeOfRestaurantPhoto"
+        android:layout_height="@dimen/sizeOfRestaurantPhoto"
+        android:padding="@dimen/paddingRestaurantPhoto"
+        app:layout_constraintEnd_toStartOf="@id/tv_clinkRestaurant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_clinkRestaurant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/paddingRestaurantTitle"
+        android:paddingTop="@dimen/paddingRestaurantTitle"
+        android:paddingEnd="@dimen/paddingRestaurantTitle"
+        android:text="@string/the_clink_restaurant"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgview_restaurant"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:gravity="start"
+        android:id="@+id/tv_clinkRestaurantDescription"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingStart="@dimen/paddingRestaurantSubTitle"
+        android:paddingEnd="@dimen/paddingRestaurantSubTitle"
+        android:text="@string/the_clink_restaurant_description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgview_restaurant"
+        app:layout_constraintTop_toBottomOf="@id/tv_clinkRestaurant" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
