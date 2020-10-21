@@ -4,4 +4,10 @@
     <dimen name="paddingRestaurantSubTitle">16dp</dimen>
     <dimen name="sizeOfRestaurantPhoto">100dp</dimen>
     <dimen name="paddingRestaurantPhoto">16dp</dimen>
+    <dimen name="marginRecyclerView">16dp</dimen>
+    <dimen name="minHeightItemRecyclerView">64dp</dimen>
+    <dimen name="sizeProgressBar">50dp</dimen>
+    <dimen name="marginTitleRestaurantDetails">16dp</dimen>
+    <dimen name="marginDishItem">10dp</dimen>
+    <dimen name="marginSpacerSections">10dp</dimen>
 </resources>

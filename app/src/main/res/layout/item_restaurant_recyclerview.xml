@@ -3,45 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minHeight="64dp">
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/minHeightItemRecyclerView">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintDimensionRatio="1:1"
         android:id="@+id/imgview_restaurant"
-        android:layout_width="@dimen/sizeOfRestaurantPhoto"
-        android:layout_height="@dimen/sizeOfRestaurantPhoto"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         android:padding="@dimen/paddingRestaurantPhoto"
-        app:layout_constraintEnd_toStartOf="@id/tv_clinkRestaurant"
+        app:layout_constraintEnd_toStartOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tv_clinkRestaurant"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/paddingRestaurantTitle"
         android:paddingTop="@dimen/paddingRestaurantTitle"
         android:paddingEnd="@dimen/paddingRestaurantTitle"
-        android:text="@string/the_clink_restaurant"
+        tools:text="@string/the_clink_restaurant"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgview_restaurant"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:gravity="start"
-        android:id="@+id/tv_clinkRestaurantDescription"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/restaurantDetails"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:ellipsize="end"
+        android:gravity="start"
         android:maxLines="2"
         android:paddingStart="@dimen/paddingRestaurantSubTitle"
         android:paddingEnd="@dimen/paddingRestaurantSubTitle"
-        android:text="@string/the_clink_restaurant_description"
+        tools:text="@string/the_clink_restaurant_description"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorTextAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgview_restaurant"
-        app:layout_constraintTop_toBottomOf="@id/tv_clinkRestaurant" />
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <ImageView
+        android:layout_marginTop="@dimen/paddingRestaurantPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:alpha=".5"
+        android:background="@color/colorTextAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restaurantDetails"
+        android:contentDescription="@string/separator_for_items_in_recyclerview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

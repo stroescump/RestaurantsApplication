@@ -5,4 +5,11 @@
     <string name="the_clink_restaurant">The Clink Restaurant</string>
     <string name="the_clink_restaurant_description">The Clink Restaurant at HMP opened in February 2014 as the third of the bla bla bla bla bla</string>
     <string name="restaurants_activity">Restaurants activity</string>
+    <string name="restaurant_details_JSONRepo">https://80795fb3-e037-4cf4-afc4-2ea225a022b3.mock.pstmn.io/restaurant/list</string>
+    <string name="separator_for_items_in_recyclerview">Separator for items in recyclerView</string>
+    <string name="placeholder_for_gmaps">Placeholder for GMaps</string>
+    <string name="spacer">Spacer</string>
+    <string name="dish">Dish</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="maps_api_key">AIzaSyBZF9NbiIZdZFQzWH4LsEfj4cW6KjsjxRQ</string>
 </resources>
