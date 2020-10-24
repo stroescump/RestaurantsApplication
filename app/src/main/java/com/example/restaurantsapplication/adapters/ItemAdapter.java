@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.restaurantsapplication.R;
-import com.example.restaurantsapplication.activities.ItemRestaurant;
+import com.example.restaurantsapplication.models.ItemRestaurant;
 
 import java.util.ArrayList;
 

@@ -10,14 +10,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.restaurantsapplication.R;
-import com.example.restaurantsapplication.activities.ItemRestaurant;
 import com.example.restaurantsapplication.adapters.DishesAdapter;
+import com.example.restaurantsapplication.models.DishesJsonObject;
+import com.example.restaurantsapplication.models.ItemRestaurant;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RestaurantDetailsActivity extends AppCompatActivity implements OnMapReadyCallback {
     private ItemRestaurant restaurant;
@@ -26,10 +30,10 @@ public class RestaurantDetailsActivity extends AppCompatActivity implements OnMa
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_details);
-       if(getSupportActionBar()!=null){
-           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-           getSupportActionBar().setHomeButtonEnabled(true);
-       }
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
         restaurant = getIntent().getParcelableExtra(RestaurantsActivity.RESTAURANT_DETAILS_KEY);
         initViews();
     }
@@ -48,7 +52,12 @@ public class RestaurantDetailsActivity extends AppCompatActivity implements OnMa
             mapFragment.getMapAsync(this);
         }
         if (restaurant != null) {
-            DishesAdapter dishesAdapter = new DishesAdapter(restaurant.getDishesRestaurant(), this);
+            ArrayList<String> dishesURLs = new ArrayList<>();
+            List<DishesJsonObject> dishesRaw = restaurant.getDishesRestaurant();
+            for (DishesJsonObject dish : dishesRaw) {
+                dishesURLs.add(dish.getImagePath());
+            }
+            DishesAdapter dishesAdapter = new DishesAdapter(dishesURLs, this);
             recyclerView.setAdapter(dishesAdapter);
         }
     }

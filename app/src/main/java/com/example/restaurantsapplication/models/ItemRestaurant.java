@@ -1,19 +1,31 @@
-package com.example.restaurantsapplication.activities;
+package com.example.restaurantsapplication.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ItemRestaurant implements Parcelable {
+    @SerializedName("imagePath")
     private final String url;
+    @SerializedName("name")
     private final String title;
+    @SerializedName("description")
     private final String subtitle;
-    private final ArrayList<String> dishesRestaurant;
+    @SerializedName("photos")
+    private final List<DishesJsonObject> dishesRestaurant;
+    @SerializedName("latitude")
     private final double latitude;
+    @SerializedName("longitude")
     private final double longitude;
 
-    public ItemRestaurant(String url, String title, String subtitle, ArrayList<String> dishesRestaurant, double latitude, double longitude) {
+    public ItemRestaurant(String url, String title, String subtitle, List<DishesJsonObject> dishesRestaurant, double latitude, double longitude) {
         this.url = url;
         this.title = title;
         this.subtitle = subtitle;
@@ -26,7 +38,7 @@ public class ItemRestaurant implements Parcelable {
         url = in.readString();
         title = in.readString();
         subtitle = in.readString();
-        dishesRestaurant = in.createStringArrayList();
+        dishesRestaurant = in.createTypedArrayList(DishesJsonObject.CREATOR);
         latitude = in.readDouble();
         longitude = in.readDouble();
     }
@@ -55,7 +67,7 @@ public class ItemRestaurant implements Parcelable {
         return subtitle;
     }
 
-    public ArrayList<String> getDishesRestaurant() {
+    public List<DishesJsonObject> getDishesRestaurant() {
         return dishesRestaurant;
     }
 
@@ -77,7 +89,7 @@ public class ItemRestaurant implements Parcelable {
         dest.writeString(url);
         dest.writeString(title);
         dest.writeString(subtitle);
-        dest.writeStringList(dishesRestaurant);
+        dest.writeTypedList(dishesRestaurant);
         dest.writeDouble(latitude);
         dest.writeDouble(longitude);
     }
