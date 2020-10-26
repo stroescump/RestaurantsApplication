@@ -12,4 +12,5 @@
     <string name="dish">Dish</string>
     <string name="placeholder">Placeholder</string>
     <string name="maps_api_key">AIzaSyBZF9NbiIZdZFQzWH4LsEfj4cW6KjsjxRQ</string>
+    <string name="favrestaurant">FavRestaurant</string>
 </resources>
