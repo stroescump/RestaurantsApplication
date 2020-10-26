@@ -3,6 +3,7 @@ package com.example.restaurantsapplication.restaurants;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -81,7 +82,7 @@ public class RestaurantDetailsActivity extends AppCompatActivity implements OnMa
         isFavorite = prefsUtil.isRestaurantFavorite(restaurant.getTitle());
         menu.findItem(R.id.favoriteRestaurant)
                 .setIcon(isFavorite ? R.drawable.favorite_true_foreground : R.drawable.favorite_false_foreground);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     @Override
@@ -92,9 +93,9 @@ public class RestaurantDetailsActivity extends AppCompatActivity implements OnMa
             } else {
                 item.setIcon(R.drawable.favorite_true_foreground);
             }
-            prefsUtil.changeRestaurantFavorite(restaurant.getTitle(), !isFavorite);
+            isFavorite=!isFavorite;
+            prefsUtil.changeRestaurantFavorite(restaurant.getTitle(), isFavorite);
         }
-//
         return super.onOptionsItemSelected(item);
     }
 

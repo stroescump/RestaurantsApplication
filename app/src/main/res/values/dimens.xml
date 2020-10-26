@@ -10,4 +10,7 @@
     <dimen name="marginTitleRestaurantDetails">16dp</dimen>
     <dimen name="marginDishItem">10dp</dimen>
     <dimen name="marginSpacerSections">10dp</dimen>
+    <dimen name="heightSeparatorSections">0.8dp</dimen>
+    <dimen name="transparencySeparators">.5</dimen>
+    <dimen name="guidelineSizingPercentage">.4</dimen>
 </resources>

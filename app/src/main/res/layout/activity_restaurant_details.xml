@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:background="@color/colorPrimary"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,79 +31,83 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_restaurant_dishes"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/marginTitleRestaurantDetails"
-        android:layout_marginEnd="@dimen/marginTitleRestaurantDetails"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/map">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_restaurantTitle"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/paddingRestaurantTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/placeholder" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:alpha=".5"
-            android:background="@color/colorSpacer"
-            android:contentDescription="@string/spacer"
-            app:layout_constraintTop_toBottomOf="@id/tv_restaurantTitle" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_viewDishes"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/marginSpacerSections"
-            android:layout_marginBottom="@dimen/marginSpacerSections"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_restaurantTitle" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/separator_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="@dimen/marginSpacerSections"
-            android:alpha=".5"
-            android:background="@color/colorSpacer"
-            android:contentDescription="@string/spacer"
-            app:layout_constraintTop_toBottomOf="@id/recycler_viewDishes" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintGuide_percent="@dimen/guidelineSizingPercentage" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/marginTitleRestaurantDetails"
-        android:layout_marginTop="@dimen/marginSpacerSections"
         android:layout_marginEnd="@dimen/marginTitleRestaurantDetails"
         android:gravity="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/container_restaurant_dishes">
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_restaurantDetails"
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="@string/placeholder" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_restaurant_dishes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/map">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_restaurantTitle"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/paddingRestaurantTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/placeholder" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/heightSeparatorSections"
+                android:alpha="@dimen/transparencySeparators"
+                android:background="@color/colorSpacer"
+                android:contentDescription="@string/spacer"
+                app:layout_constraintTop_toBottomOf="@id/tv_restaurantTitle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_viewDishes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/marginSpacerSections"
+                android:layout_marginBottom="@dimen/marginSpacerSections"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurantTitle" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/separator_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/heightSeparatorSections"
+                android:layout_marginTop="@dimen/marginSpacerSections"
+                android:alpha="@dimen/transparencySeparators"
+                android:background="@color/colorSpacer"
+                android:contentDescription="@string/spacer"
+                app:layout_constraintTop_toBottomOf="@id/recycler_viewDishes" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="@dimen/marginSpacerSections"
+                android:id="@+id/tv_restaurantDetails"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/separator_recyclerview"
+                app:layout_constraintStart_toStartOf="@+id/separator_recyclerview"
+                app:layout_constraintTop_toBottomOf="@+id/separator_recyclerview"
+                tools:text="@string/placeholder" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
 

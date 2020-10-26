@@ -8,5 +8,5 @@
     <color name="colorTextPrimary">#331F27</color>
     <color name="colorTextAccent">#808080</color>
     <color name="colorDishBackground">#CCCCCC</color>
-    <color name="colorSpacer">#1A1A1A</color>
+    <color name="colorSpacer">#000000</color>
 </resources>
